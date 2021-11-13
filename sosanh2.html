@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So sánh khác nhau giữa slice/substr/substring</title>
+    <style>
+        body{
+              background: linear-gradient(to bottom right, #ffff99 0%, #ffcccc 100%);
+            }
+        h1{
+           color: rgb(29, 233, 63);
+           font-size: 40px;
+           width: auto;
+           margin: auto;
+           }
+    </style>
+</head>
+<body>
+    <h1 class="post-title entry-title" itemprop="name">
+        Hàm substr() và substring(), slice() cắt chuỗi trong Javascript
+    </h1><br>
+    <div class="post-body entry-content" id="post-body-4863163870608025326" itemprop="description articleBody">
+        <span id="4863163870608025326">Hàm substr() và substring(), slice() đều là hàm cắt chuỗi trong Javascript. Nhưng mỗi hàm lại có công dụng và hành vi riêng của nó, những bạn mới tìm hiểu Javascript rễ hiểu lầm 2 hàm substr() và substring() giống nhau. Dưới đây là công dụng và cách sử dụng từng hàm.<br>
+        <br>
+        <span style="color:black;"><b>1. Hàm substr()</b></span><br>
+        <blockquote class="tr_bq">
+        <span style="font-family: 'Courier New', Courier, monospace;">Cấu trúc: string.substr(start[, length]);</span></blockquote>
+        &nbsp; - <span style="color: black;">
+        <span style="font-family: 'Courier New', Courier, monospace;;">start</span></span>: là vị trí bắt đầu<br>
+        &nbsp; - <span style="color: black;">
+        <span style="font-family: 'Courier New', Courier, monospace;">length</span></span>: là độ dài chuỗi con cần lấy tính từ vị trí bắt đầu<br>
+        <div class="separator" style="clear: both; text-align: center;">
+        <a href="img/anh3.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;">
+            <img  src="img/anh3.jpg"></a></div>
+        <br>
+        VD1:<br>
+        <blockquote class="tr_bq">
+        <span style="font-family: 'Courier New', Courier, monospace;">var str="abcdefghijklmnopq";</span><br>
+        <span style="font-family: 'Courier New', Courier, monospace;">document.write(str.substr(0,3)); <span style="color: #38761d;">//Từ đầu chuỗi lấy thêm 3 ký tự. Kết quả: "abc"</span></span><br>
+        <span style="font-family: 'Courier New', Courier, monospace;">document.write(str.substr(3,5)); <span style="color: #38761d;">//Từ vị trí thứ 3 lấy thêm 5 ký tự. Kết quả: "defgh"</span></span></blockquote>
+        <br>
+        Nếu vị trí bắt đầu là số âm, hàm sẽ đếm ngược từ cuối chuỗi.<br>
+        VD2: <br>
+        <blockquote class="tr_bq">
+        <span style="font-family: 'Courier New', Courier, monospace;">var str="abcdefghijklmnopq";</span><br>
+        <span style="font-family: 'Courier New', Courier, monospace;">document.write(str.substr(-10,4)); <span style="color: #38761d;">//từ vị trí thứ 10 tính từ cuối chuỗi lấy thêm 4 ký tự. Kết quả: "hijk"</span></span></blockquote>
+        <ul>
+        <li>Nếu độ dài (length) bằng 0 sẽ trả về 1 sâu rỗng</li>
+        <li>Nếu độ dài là giá trị âm (&lt;0) sẽ được tính như là 0</li>
+        <li>Nếu khuyết độ dài (length) hàm sẽ trả về chuỗi con được tính từ vị trí bắt đầu đến cuối chuỗi.</li>
+        </ul>
+        VD3:<br>
+        <blockquote class="tr_bq">
+        <span style="font-family: 'Courier New', Courier, monospace;">var str="abcdefghijklmnopq";</span><br>
+        <span style="font-family: 'Courier New', Courier, monospace;">document.write(str.substr(3)); <span style="color: #38761d;">//Tính từ vị trí thứ 3 đến cuối chuỗi. Kết quả: "defghijklmnopq"</span></span><br>
+        <span style="font-family: 'Courier New', Courier, monospace;">document.write(str.substr(-5)); <span style="color: #38761d;">//Tính từ vị trí thứ 5 (đếm từ cuối chuỗi) đến cuối chuỗi. Kết quả: "mnopq"</span></span></blockquote>
+        <br>
+        <span style="color: black;"><b>2. Hàm substring()</b></span><br>
+        <blockquote class="tr_bq">
+        <span style="font-family: 'Courier New', Courier, monospace;">Cấu trúc: string.substring(start[, stop]);</span></blockquote>
+        &nbsp;- <span style="color: black;"><span style="font-family:'Courier New', Courier, monospace;">strart</span></span>: vị trí bắt đầu<br>
+        &nbsp;- <span style="color: black;"><span style="font-family: 'Courier New', Courier, monospace;">stop</span></span>: vị trí kết thúc<br>
+        <div class="separator" style="clear: both; text-align: center;">
+        <a href="img/anh4.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img  src="img/anh4.jpg"></a></div>
+        VD4:<br>
+        <blockquote class="tr_bq">
+        <span style="font-family: 'Courier New', Courier, monospace;">var str="abcdefghijklmnopq";<br>
+        document.write(str.substring(0,3)); <span style="color: #38761d;">//Lấy từ đầu chuỗi đến vị trí tứ 3. Kết quả: "abc"</span></span><br>
+        <span style="font-family: 'Courier New', Courier, monospace;">document.write(str.substring(3,8)); <span style="color: #38761d;">//Lấy từ vị trí thứ 3 đến vị trí thứ 8. Kết quả: "defgh"</span></span></blockquote>
+        <ul>
+        <li>Nếu start bằng stop nó sẽ trả về chuỗi rỗng.</li>
+        <li>Nếu 1 trong 2 giá trị (start, stop) âm (nhỏ hơn 0) nó sẽ được xử lý như là 0</li>
+        <li>Nếu start &gt; stop nó sẽ đổi vị trí 2 đối số.</li>
+        <li>Nếu 1 trong 2 giá trị (start, stop) lớn hơn chiều dài của chuỗi sẽ được xử lý bằng độ dài của chuỗi. <i>(Nó cũng giống như bị khuyết giá trị đó)</i></li>
+        <li>Nếu bỏ qua stop (khuyết stop) sẽ lấy từ vị trí bắt đầu đến cuối chuỗi. <i>(điều này giống với hàm substr())</i></li>
+        </ul>
+        <br>
+        <span style="color: black;"><b>3. Hàm slice()</b></span>: hoạt động như substring() nhưng có một số hành vi khác nhau.<br>
+        <blockquote class="tr_bq">
+        <span style="font-family: 'Courier New', Courier, monospace;">Cấu trúc: string.slice(start[, stop]);</span></blockquote>
+        &nbsp;- Nếu giá trị kết thúc (stop) được bỏ qua cũng như hàm substring() sẽ tính từ vị trí bắt đầu đến cuối chuỗi.<br>
+        &nbsp;- Nếu start &gt; stop, slice() sẽ không trao đổi 2 đối số. <i>(Được con là điều kiện sai, trả về chuỗi rỗng)</i><br>
+        &nbsp;- Nếu start là số âm (&lt;0), slice() sẽ thiết vị trí đếm từ cuối chuỗi, giống như substr(). Trong trường hợp đếm từ cuối chuỗi nhưng vị trí bắt đầu vẫn vượt vị trí kết thúc trong chuỗi nó sẽ giống như trường hợp start &gt; stop. VD<span style="font-family: 'Courier New', Courier, monospace;">:</span><br>
+        <blockquote class="tr_bq">
+        <span style="font-family: 'Courier New', Courier, monospace;">var str="abcdefghijklmnopq";<br>
+        document.write(str.slice(-10,8)); Tính từ vị trí thứ 10 đếm ngược từ cuối chuỗi đến vị trí thứ 8 đếm từ đầu chuỗi. Kết quả: "h"</span></blockquote>
+        <br>
+        &nbsp;- Nếu stop là âm, thì vị trí kết thúc cũng sẽ được tính từ cuối chuỗi đếm ngược lại.<br>
+        <blockquote class="tr_bq">
+        <span style="font-family: 'Courier New', Courier, monospace;">var str="abcdefghijklmnopq";<br>
+        document.write(str.slice(-10,-7)); Tính từ vị trí thứ 10 đếm ngược từ cuối chuỗi đến vị trí thứ 8 đếm ngược từ cuối chuỗi. Kết quả: "hij"</span></blockquote>
+        <span style="color: #38761d;"><i>*Chú ý khi sử dụng slice() bạn có thể cho giá trị dương hoặc âm (tức là đếm từ đầu hoặc cuối chuỗi) nhưng vị trí bắt đầu không được vượt quá vị trí kết thúc, nếu không sẽ được coi là sai.</i></span><br>
+        <br>
+        Các bạn hãy thử thay đổi giá trị của 2 đối số trong các hàm để hiểu rõ hơn về cách hoạt động của nó.</span>
+        <div style="clear: both;"></div>
+        </div>
+</body>
+</html>

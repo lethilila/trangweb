@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Các cách sử dụng querySelector trong javascript</title>
+    <style>
+        body{
+                  background: linear-gradient(to bottom right, #ffff99 0%, #ffcccc 100%);
+                }
+            h1{
+               color: rgb(29, 233, 63);
+               font-size: 40px;
+               width: auto;
+               margin: auto;
+               }
+    </style>
+</head>
+<body>
+    <h1>Hàm document.querySelector() trong Javascript</h1><br>
+    <div class="article">
+        <p class="ads_displayed">Phương thức&nbsp;<code>querySelector()</code> sẽ trả về phần tử đầu tiên trong tập hợp các kết quả được tìm thấy bởi CSS selector được cung cấp khi gọi phương thức.</p>
+        <p class="ads_displayed">Lưu ý rằng sẽ chỉ có phần tử đầu tiên trong các kết quả được trả về. Nếu bạn muốn trả về tất cả các phần tử được tìm thấy, sử dụng phương thức&nbsp;<code>querySelectorAll()</code>.</p>
+        <p class="ads_displayed">Nếu selector được cung cấp tìm theo id và id đó được sử dụng nhiều hơn một lần trong trang, phương thức cũng sẽ chỉ trả về phần tử đầu tiên được tìm thấy(Lưu ý rằng không nên sử dụng một id cho nhiều phần tử).</p>
+    <h2 id="goto-h2-0" data-stt="0">Cú pháp</h2>
+        <p class="ads_displayed"><b>Cú pháp:&nbsp;</b><code>document.querySelector(CSS selectors)</code></p>
+        <ul>
+	       <li><strong>Css selectors</strong> là một chuỗi xác định một hoặc một số selector để tìm kiếm các phần tử HTML dựa vào&nbsp;id, classes, types, attributes, values of attributes ... của chúng.</li>
+        </ul>
+    <h2 id="goto-h2-1" data-stt="1">Cách sử dụng</h2>
+        <p class="ads_displayed">Tìm kiếm và đổi màu chữ cho phần tử có <code>class="demo"</code> đầu tiên xuất hiện trên trang:</p>
+        <p></p><div class="demo-wrapper">
+        <h3>Code</h3>
+            <img src="img/anh5.PNG" alt="ảnh 5">
+<p class="ads_displayed">Tham khảo: w3schools.com</p>
+</body>
+</html>
